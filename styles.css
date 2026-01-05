@@ -1,0 +1,280 @@
+body {
+    background-color: #8b0000;
+    background-image:
+        radial-gradient(circle at 10% 20%, #d32f2f 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, #b71c1c 0%, transparent 20%);
+    overflow: hidden;
+}
+
+.heart-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    background-color: #ef4444;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: inherit;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    left: 15px;
+    top: 0;
+}
+
+/* Responsive scale for background hearts */
+@media (max-width: 768px) {
+    .heart {
+        transform: scale(0.6) rotate(-45deg) !important;
+        /* Slightly larger than 0.5 */
+        opacity: 0.8 !important;
+        /* Restore opacity for vibrancy */
+    }
+}
+
+.h1 {
+    left: 10%;
+    top: 10%;
+    transform: scale(3.5) rotate(-35deg);
+    opacity: 0.9;
+    background-color: #dc2626;
+    z-index: 1;
+}
+
+.h2 {
+    left: 85%;
+    top: 15%;
+    transform: scale(4) rotate(15deg);
+    opacity: 0.8;
+    background-color: #b91c1c;
+    z-index: 1;
+}
+
+.h3 {
+    left: 5%;
+    top: 80%;
+    transform: scale(3) rotate(-15deg);
+    opacity: 0.9;
+    background-color: #ef4444;
+    z-index: 1;
+}
+
+.h4 {
+    left: 80%;
+    top: 85%;
+    transform: scale(5) rotate(5deg);
+    opacity: 0.85;
+    background-color: #991b1b;
+    z-index: 1;
+}
+
+.h5 {
+    left: 45%;
+    top: 5%;
+    transform: scale(2) rotate(10deg);
+    opacity: 0.6;
+    background-color: #f87171;
+}
+
+.h6 {
+    left: 55%;
+    top: 90%;
+    transform: scale(2.5) rotate(-10deg);
+    opacity: 0.7;
+    background-color: #ef4444;
+}
+
+.h7 {
+    left: 20%;
+    top: 40%;
+    transform: scale(1.5) rotate(45deg);
+    opacity: 0.5;
+    background-color: #fca5a5;
+}
+
+.h8 {
+    left: 75%;
+    top: 50%;
+    transform: scale(1.8) rotate(-25deg);
+    opacity: 0.6;
+    background-color: #f87171;
+}
+
+.h9 {
+    left: -5%;
+    top: 40%;
+    transform: scale(4.5) rotate(25deg);
+    opacity: 0.8;
+    background-color: #b91c1c;
+    filter: blur(2px);
+}
+
+.h10 {
+    left: 95%;
+    top: 60%;
+    transform: scale(4) rotate(-15deg);
+    opacity: 0.7;
+    background-color: #dc2626;
+    filter: blur(3px);
+}
+
+.h11 {
+    left: 30%;
+    top: 15%;
+    transform: scale(1.2) rotate(-5deg);
+    opacity: 0.4;
+    background-color: #fecaca;
+}
+
+.h12 {
+    left: 60%;
+    top: 25%;
+    transform: scale(1.4) rotate(25deg);
+    opacity: 0.5;
+    background-color: #fca5a5;
+}
+
+.h-sm-1 {
+    left: 15%;
+    top: 65%;
+    transform: scale(0.8) rotate(15deg);
+    opacity: 0.6;
+    background-color: #fecaca;
+}
+
+.h-sm-2 {
+    left: 90%;
+    top: 35%;
+    transform: scale(0.9) rotate(-10deg);
+    opacity: 0.7;
+    background-color: #f87171;
+}
+
+/* Refined Media Queries for Specific Hearts to prevent blocking */
+@media (max-width: 768px) {
+
+    /* Override individual transforms to be smaller but keep rotation variance if possible, or simplified */
+    /* Since we have !important on the generic .heart rule above for mobile, these might be overridden unless we use !important here too or fix specificity.
+       Let's use the generic rule to conform them all for a cleaner mobile look, or just set positions.
+       Actually, let's just let the generic rule handle the scale and rotation to keep it simple and clean.
+       We will just hide some if they are too much. */
+    /* .h9, .h10 { display: none; }  Restoring these for better visuals, as card is smaller now */
+
+    /* Hide large blurred hearts on mobile they take too much space */
+}
+
+.notecard {
+    background-color: #ffffff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.lined-pattern {
+    background-image: repeating-linear-gradient(transparent, transparent 39px, #d1d5db 39px, #d1d5db 40px);
+    background-size: 100% 40px;
+    background-position: 0 40px;
+}
+
+.notecard::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    width: 50%;
+    height: 20px;
+    z-index: -1;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    transform: rotate(2deg);
+}
+
+.card-heart {
+    position: absolute;
+    bottom: -15px;
+    right: 30px;
+    z-index: 40;
+    transform: scale(1.5) rotate(15deg);
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.card-heart-top {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    z-index: 40;
+    transform: scale(0.8) rotate(-15deg);
+    filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 640px) {
+    .card-heart {
+        transform: scale(1.2) rotate(15deg);
+        right: 15px;
+        bottom: -10px;
+    }
+
+    .card-heart-top {
+        transform: scale(0.6) rotate(-15deg);
+        left: 10px;
+        top: -5px;
+    }
+}
+
+/* Typewriter blinking cursor effect (optional) */
+#typewriter::after {
+    content: '|';
+    animation: blink 1s infinite;
+    margin-left: 2px;
+    color: #d32f2f;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Custom scrollbar for text container if needed */
+.overflow-y-auto::-webkit-scrollbar {
+    width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: rgba(211, 47, 47, 0.3);
+    border-radius: 20px;
+}

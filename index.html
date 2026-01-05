@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Romantic Hearts Notecard Landing Page</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="font-display min-h-screen flex items-center justify-center p-4 md:p-8 relative">
+    <div class="heart-bg">
+        <div class="heart h1"></div>
+        <div class="heart h2"></div>
+        <div class="heart h3"></div>
+        <div class="heart h4"></div>
+        <div class="heart h5"></div>
+        <div class="heart h6"></div>
+        <div class="heart h7"></div>
+        <div class="heart h8"></div>
+        <div class="heart h9"></div>
+        <div class="heart h10"></div>
+        <div class="heart h11"></div>
+        <div class="heart h12"></div>
+        <div class="heart h-sm-1"></div>
+        <div class="heart h-sm-2"></div>
+    </div>
+    <main
+        class="relative z-10 w-full max-w-[85vw] md:max-w-[600px] aspect-[3/4] md:aspect-[3/2] notecard transform -rotate-1 md:-rotate-2 transition-transform duration-500 hover:rotate-0 rounded-sm mx-auto flex flex-col">
+        <div
+            class="absolute inset-0 z-20 lined-pattern opacity-60 pointer-events-none rounded-sm bg-white m-4 md:m-6 shadow-inner">
+        </div>
+        <div class="relative z-30 h-full w-full p-6 md:p-12 flex flex-col items-center justify-center overflow-y-auto">
+            <button id="startBtn"
+                class="bg-red-600 text-white px-8 py-3 rounded-full text-xl font-medium shadow-lg hover:bg-red-700 transition-all transform hover:scale-105 animate-bounce z-50">
+                This is for you ❤️
+            </button>
+            <div id="textContainer" class="hidden w-full h-full">
+                <div id="typewriter"
+                    class="text-gray-800 text-lg md:text-xl font-medium leading-relaxed whitespace-pre-line font-display tracking-wide w-full h-full">
+                </div>
+            </div>
+        </div>
+        <div class="card-heart">
+            <div class="heart bg-red-600"></div>
+        </div>
+        <div class="card-heart-top">
+            <div class="heart bg-red-500"></div>
+        </div>
+    </main>
+
+</body>
+
+</html>
